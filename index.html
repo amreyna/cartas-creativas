@@ -92,6 +92,21 @@
     </div>
   </section>
 
+<!-- BOTÓN PARA IR A LA PÁGINA DE PIZZA -->
+  <div style="margin: 30px;">
+    <button onclick="window.location.href='ventaPizza.html'" style="
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    ">
+      Ir a Venta de Pizza
+    </button>
+  </div>
+
   <script>
     function sumarLike(boton) {
       const contador = boton.nextElementSibling;
@@ -100,6 +115,5 @@
       contador.innerText = likes + " me gusta";
     }
   </script>
-
 </body>
 </html>

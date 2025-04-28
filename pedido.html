@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Realizar Pedido</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5; /* fondo rosa pastel */
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #d6336c;
+    }
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .cartas {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .carta-item {
+      background: #ffe4ec;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .carta-item img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #d6336c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 30px auto 0 auto;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #a72550;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Realizar Pedido de Cartas</h1>
+
+  <form action="https://formsubmit.co/mitsuhamiyabami@gmail.com" method="POST">
+
+    <label>Nombre del comprador:</label>
+    <input type="text" name="Nombre del comprador" required>
+
+    <label>Correo del comprador:</label>
+    <input type="email" name="Correo del comprador" required>
+
+    <label>¿Para quién es la carta?:</label>
+    <input type="text" name="Destinatario de la carta" required>
+
+    <h2>Elige tus cartas</h2>
+
+    <div class="cartas">
+      <!-- Carta 1 -->
+      <div class="carta-item">
+        <input type="checkbox" name="Carta 1" value="Carta 1 - $100">
+        <img src="sofi1.jpeg" alt="Carta 1">
+        <p>"Encuentro de Estrellas" - $100</p>
+      </div>
+
+      <!-- Carta 2 -->
+      <div class="carta-item">
+        <input type="checkbox" name="Carta 2" value="Carta 2 - $120">
+        <img src="sofi2.jpeg" alt="Carta 2">
+        <p>"Jardin de Caricias" - $120</p>
+      </div>
+
+      <!-- Carta 3 -->
+      <div class="carta-item">
+        <input type="checkbox" name="Carta 3" value="Carta 3 - $110">
+        <img src="sofi3.jpeg" alt="Carta 3">
+        <p>"Suspiros de Amor" - $110</p>
+      </div>
+
+      <!-- Carta 4 -->
+      <div class="carta-item">
+        <input type="checkbox" name="Carta 4" value="Carta 4 - $90">
+        <img src="sofi4.jpeg" alt="Carta 4">
+        <p>"Amor Eterno" - $90</p>
+      </div>
+
+      <!-- Carta 5 -->
+      <div class="carta-item">
+        <input type="checkbox" name="Carta 5" value="Carta 5 - $130">
+        <img src="sofi5.jpeg" alt="Carta 5">
+        <p>"Jardin de Memorias" - $130</p>
+      </div>
+
+      <div class="carta-item">
+        <input type="checkbox" name="Carta 6" value="Carta 6 - $130">
+        <img src="sofi6.jpeg" alt="Carta 6">
+        <p>"Santuario de tintas y Susurros" - $160</p>
+      </div>
+    </div>
+
+    <button type="submit">Enviar Pedido</button>
+
+  </form>
+</body>
+</html>

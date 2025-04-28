@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cartas Hechas a Mano</title>
+  <style>
+    body {
+      background-color: #800020; /* bordeaux */
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Cabecera completa del sitio */
+    header {
+      display: flex; /* usamos flexbox para acomodar los elementos horizontalmente */
+      align-items: flex-start; /* alineamos los elementos al inicio de la parte superior */
+      padding: 20px;
+      background-color: #4b0012;
+    }
+
+    /* Título principal del sitio */
+    .titulo-sitio {
+      margin: 0;
+      font-size: 2.5em;
+      text-align: left;
+      /* Ahora está posicionado al inicio por estar dentro de un contenedor con display:flex */
+      /* Puedes cambiar text-align a 'center' o 'right' si quieres moverlo horizontalmente */
+    }
+
+    /* Contenedor de toda la estructura principal */
+    .contenido {
+      display: flex;
+    }
+    
+        /* Menú de navegación */
+    .menu-navegacion {
+      display: flex;
+      gap: 20px; /* espacio entre los enlaces */
+    }
+    
+    .menu-navegacion a {
+      color: white; /* color del texto */
+      text-decoration: none; /* quitamos el subrayado */
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    .menu-navegacion a:hover {
+      color: #ffcccc; /* cambia de color al pasar el mouse */
+    }
+
+    /* Columna izquierda debajo del título */
+    .columna-izquierda {
+      width: 20%; /* relación de aspecto como proporción áurea (aprox 1:1.6) */
+      padding: 20px;
+      background-color: #66001c;
+      min-height: 600px;
+    }
+
+    /* Columna derecha con el resto del contenido */
+    .columna-derecha {
+      width: 80%;
+      padding: 20px;
+    }
+
+    /* Sección de los cuadros informativos */
+    .info-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: auto;
+    }
+
+    .info-box {
+      background-color: #a93242;
+      border-radius: 20px;
+      padding: 20px;
+      width: 30%;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .info-box.vertical {
+      width: 20%;
+      height: 340px;
+    }
+
+    .galeria {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .galeria-item {
+      background-color: #fff;
+      border-radius: 12px;
+      width: 200px;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+      color: #333;
+    }
+
+    .galeria-item img {
+     width: 100%;
+      height: auto;
+      border-radius: 10px;
+      }
+    
+
+    .descripcion-img {
+      margin-top: 10px;
+      min-height: 60px;
+    }
+
+    .cliente-section {
+      background-color: #4b0012;
+      padding: 40px 20px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .cliente-box {
+      background-color: #a93242;
+      color: white;
+      border-radius: 15px;
+      padding: 20px;
+      width: 28%;
+      margin: 10px;
+      min-height: 150px;
+      text-align: center;
+    }
+    .testimonios {
+ margin-top: 60px;
+ padding: 40px;
+ background-color: #4b0012; /* un tono más oscuro del fondo */
+ border-top: 3px solid #ffcccc;
+ text-align: center;
+}
+ 
+.testimonios h2 {
+ font-size: 2em;
+ margin-bottom: 20px;
+ color: #ffcccc;
+}
+ 
+/* Estilo de cada testimonio */
+.testimonio {
+ opacity: 0; /* empieza invisible */
+ transform: translateY(30px); /* se ve como si subiera */
+ animation: aparecer 1s ease forwards; /* animación */
+ animation-delay: var(--delay); /* espera diferente para cada frase */
+ font-size: 1.2em;
+ color: white;
+ margin-bottom: 15px;
+}
+ 
+/* Animación definida */
+@keyframes aparecer {
+ to {
+   opacity: 1;
+   transform: translateY(0); /* vuelve a su lugar normal */
+ }
+}
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <!-- Contenedor que separa el título del menú -->
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <!-- Título a la izquierda -->
+      <h1 class="titulo-sitio">MOKANI</h1>   
+      <!-- Menú a la derecha -->
+      <nav class="menu-navegacion">
+        <a href="#inicio">Inicio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenedor de dos columnas: izquierda para contenido extra, derecha para todo lo demás -->
+  <div class="contenido">
+
+    <!-- Columna izquierda: Aquí se puede agregar información extra debajo del título -->
+    <div class="columna-izquierda">
+      <!-- Por ahora está vacío, pero puedes poner enlaces, redes sociales, menú, etc -->
+    </div>
+
+    <!-- Columna derecha: contiene el contenido principal -->
+    <div class="columna-derecha">
+      
+      <!-- Sección de cuadros informativos -->
+      <section class="info-section">
+        <div class="info-box vertical">
+            <p>¿Que Somos?</p>
+          <br>Somos un espacio donde el amor, la nostalgia, la amistad y los sueños encuentran su forma en papel.
+Nos dedicamos a crear cartas artesanales, hechas a mano, pensadas para dedicar, regalar o simplemente atesorar. Cada carta es una pequeña obra de arte: llena de detalles, ilustraciones, palabras cuidadosamente elegidas y la intención de tocar corazones.<br>
+          
+<br>Creemos que en un mundo que a veces corre demasiado rápido, detenerse a escribir y regalar algo hecho desde el alma es un acto de amor profundo.
+Nuestras cartas son para quienes todavía creen en la magia de una nota inesperada, en el poder de una palabra honesta, en la belleza de los sentimientos vulnerables.
+Queremos ayudarte a decir aquello que a veces se siente tan grande que no cabe en la voz, pero que sí puede caber en un suspiro escrito, en un dibujo, en una carta.<br>
+<br>No solo vendemos papeles con palabras; construimos recuerdos, envolvemos emociones y regalamos momentos que ojalá duren toda la vida.<br>
+        </div>
+        <div class="info-box">
+          <p>¿Quieres una carta?</p>
+        </div>
+        <div class="info-box">
+          <p>Mas regalos si no los propones :p</p>
+        </div>
+      </section>
+
+      <!-- Galería de imágenes -->
+      <section class="galeria">
+        <div class="galeria-item">
+          <img src="sofi1.jpeg" alt="Carta 1">
+          <div class="descripcion-img">"Encuentro de Estrellas"<br>
+            Esta carta cuenta una historia sin necesidad<br>
+            de muchas palabras: dos almas destinadas a <br>
+            encontrarse, como cometas que cruzan el <br>
+            cielo o como partículas bailando en el<br>
+            espacio. Con ilustraciones llenas de ternura,<br>
+            cada trazo es un suspiro, cada color, un<br>
+            pequeño universo. Ideal para regalar a quien<br>
+            hace que el mundo gire más despacio y el<br>
+            amor se sienta inevitable.</div>
+        </div>
+        <div class="galeria-item">
+          <img src="sofi2.jpeg" alt="Carta 2">
+          <div class="descripcion-img">"Jardin de Caricias"<br>Entre corazones entrelazados, flores que<br>
+            brillan y dulces gatitos dibujados a mano, esta <br>
+            carta es un poema visual para quienes creen<br>
+            en la magia del amor sencillo y verdadero. Un<br>
+            regalo personalizado que late al ritmo de dos<br>
+            nombres, unidos como un jardín secreto que <br>
+            florece en papel.</div>
+        </div>
+        <div class="galeria-item">
+          <img src="sofi3.jpeg" alt="Carta 3">
+          <div class="descripcion-img">"Suspiros de Amor"<br>
+            Un universo de amor y alegría vive en cada<br>
+            pliegue de esta carta. Con la ternura eterna<br>
+            de Snoopy y palabras que abrazan el corazón,<br>
+            esta creación combina colores vibrantes,<br>
+            pequeños secretos guardados en sobres y<br>
+            mensajes que susurran ‘Te amo’ en dos <br>
+            idiomas. Perfecta para regalar un pedacito<br>
+            de felicidad en cualquier momento del año.</div>
+        </div>
+         <div class="galeria-item">
+          <img src="sofi4.jpeg" alt="Carta 3">
+          <div class="descripcion-img">“Amor eterno”<br>
+Dos esqueletos sellan un abrazo que <br>
+trasciende el tiempo, rodeados de besos<br>
+suspendidos en el aire. Esta carta es una<br>
+promesa: la de un amor que ni la muerte<br>
+puede apagar. Una pieza melancólica y <br>
+apasionada, ideal para almas románticas que <br>
+encuentran belleza en lo eterno y lo imposible.</div>
+        </div>
+        
+        <div class="galeria-item">
+          <img src="sofi5.jpeg" alt="Carta 3">
+          <div class="descripcion-img">“Jardín de memorias”<br>
+Una carta que florece en cada palabra.<br>
+Pétalos de colores vibrantes enmarcan un<br>
+  mensaje íntimo y esperanzador, como un<br>
+susurro al oído de alguien amado.<br>
+  Hecha con la calidez de un abrazo y el suspiro de la <br>
+distancia, es un refugio para quienes creen<br>
+  que el amor puede brotar incluso en los <br>
+    rincones más tristes.</div>
+        </div>
+        <div class="galeria-item">
+          <img src="sofi6.jpeg" alt="Carta 3">
+          <div class="descripcion-img">“Santuario de tinta y susurros”<br>
+Una carta que se despliega como un antiguo <br>
+hechizo: en cada pliegue, versos que acarician<br>
+y heridas que sanan. Dibujos detallados como <br>
+sueños entrelazados, pájaros, corazones,<br>
+símbolos secretos… todo resguardado en un <br>
+relicario de nostalgia y ternura. Es un fragmento de alma atrapado en papel,<br>
+perfecto para quien ama la belleza cruda de <br>
+  las emociones.</div>
+        </div>
+      </section>
+
+      <!-- Sección para cliente -->
+      <section class="cliente-section">
+        <div class="cliente-box">
+ <p><strong>Enviar tu diseño personalizado</strong></p>
+ 
+ <!-- Formulario para enviar imagen -->
+ <form id="formulario-imagen" action="https://formsubmit.co/mitsuhamiyabami@gmail.com" method="POST" enctype="multipart/form-data">
+ 
+   <!-- Seguridad contra robots -->
+   <input type="hidden" name="_captcha" value="false">
+ 
+   <!-- Redirección luego de enviar -->
+   <input type="hidden" name="_next" value="https://amreyna.github.io/Cartas-Sofia/diseñoper.html">
+ 
+   <!-- Selección de imagen -->
+   <input type="file" id="imagen" name="imagen" accept=".jpg,.jpeg,.png,.gif" required>
+   <br><br>
+    <input type="text" name="Nombre" placeholder="Tu nombre" required>
+  <input type="email" name="Email" placeholder="Tu correo" required>
+  
+  <br><br>
+ 
+   <!-- Botón para enviar -->
+   <input type="submit" value="Enviar imagen" style="padding: 10px 20px; border: none; border-radius: 5px; background-color: #ffcccc; cursor: pointer;">
+   
+   <!-- Mensaje de error si no se cumple la condición -->
+   <p id="error-mensaje" style="color: yellow;"></p>
+ </form>
+</div>
+<div class="cliente-box">
+ <p><strong>Realizar comentarios</strong></p>
+ 
+ <!-- Formulario para enviar comentarios -->
+ <form action="https://formsubmit.co/mitsuhamiyabami@gmail.com" method="POST">
+ 
+   <!-- Seguridad contra robots -->
+   <input type="hidden" name="_captcha" value="false">
+ 
+   <!-- Redirige al terminar -->
+   <input type="hidden" name="_next" value="https://amreyna.github.io/Cartas-Sofia/gracias.html">
+ 
+   <!-- Área de texto para el comentario -->
+   <textarea name="comentario" placeholder="Escribe tu comentario aquí..." rows="5" style="width: 100%; border-radius: 10px;"></textarea>
+   <br><br>
+ <input type="text" name="Nombre" placeholder="Tu nombre" required>
+  <input type="email" name="Email" placeholder="Tu correo" required>
+   <br><br>
+   <!-- Botón para enviar -->
+   <input type="submit" value="Enviar" style="padding: 10px 20px; border: none; border-radius: 5px; background-color: #ffcccc; cursor: pointer;">
+ </form>
+</div>
+        <div class="cliente-box">
+          <p><strong>Realizar un pedido</strong></p>
+          <a href="pedido.html">
+  <input type="submit" value="Realizar pedidos" style="padding: 10px 20px; border: none; border-radius: 5px; background-color: #ffcccc; cursor: pointer;">
+</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <!-- Sección de testimonios -->
+<section class="testimonios">
+ <h2>Lo que dicen sobre mis cartas</h2>
+ 
+ <!-- Cada testimonio aparecerá con animación -->
+ <div class="testimonio" style="--delay: 0s;">“Están hermosas 😍”</div>
+ <div class="testimonio" style="--delay: 1s;">“Le encantó a mi novio 💌”</div>
+ <div class="testimonio" style="--delay: 2s;">“Diseños súper originales”</div>
+</section>
+
+  <!-- Botón para ir al sitio -->
+<a href="https://miyabami.github.io/lusof/" target="_blank" class="boton-rosado">Pizzas :p</a>
+
+<style>
+.boton-rosado {
+  display: block;
+  background-color: #ff66a3; /* Rosado bonito */
+  color: white;
+  padding: 15px 30px;
+  margin: 20px auto;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-rosado:hover {
+  background-color: #e0558f;
+  transform: scale(1.05);
+}
+</style>
+</body>
+</html>
